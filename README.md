@@ -1,6 +1,8 @@
 # lein-bom
 
-A Leiningen plugin to do many wonderful things.
+A Leiningen plugin that provides support for importing Maven "Bill Of Materials" (BOM) dependencies.
+
+[![Clojars Project](https://img.shields.io/clojars/v/lein-bom.svg)](https://clojars.org/lein-bom)
 
 ## Usage
 
