@@ -16,4 +16,4 @@ jdk:
 
 after_success:
   - bash deploy
-  - bash <(curl -s https://codecov.io/bash) -f target/coverage/codecov.json
+  - bash <(curl -s https://codecov.io/bash)
