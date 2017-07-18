@@ -1,6 +1,4 @@
-# lein-bom
-
-[![Clojars Project](https://clojars.org/lein-bom/latest-version.svg)](https://clojars.org/lein-bom)
+# lein-bom [![Clojars Project](https://clojars.org/lein-bom/latest-version.svg)](https://clojars.org/lein-bom) [![Build Status](https://travis-ci.org/tsachev/lein-bom.svg?branch=master)](https://travis-ci.org/tsachev/lein-bom)
 
 A Leiningen plugin that provides support for importing Maven "Bill Of Materials" (BOM) dependencies.
 

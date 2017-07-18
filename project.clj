@@ -4,4 +4,6 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :min-lein-version "2.7.1"
-  :eval-in-leiningen true)
+  :eval-in :leiningen
+  :plugins [[lein-cloverage "1.0.9"]]
+  :deploy-repositories [["clojars" {:username :env/CLOJARS_USERNAME :password :env/CLOJARS_PASSWORD}]])

@@ -1,0 +1,19 @@
+language: clojure
+lein: 2.7.1
+sudo: false
+
+script:
+  - lein cloverage --codecov
+
+cache:
+  directories:
+    - $HOME/.m2
+
+jdk:
+  - oraclejdk8
+  - oraclejdk7
+  - openjdk7
+
+after_success:
+  - bash deploy
+  - bash <(curl -s https://codecov.io/bash) -f target/coverage/codecov.json
