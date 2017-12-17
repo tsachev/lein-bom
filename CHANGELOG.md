@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file. This change
 
 ## [Unreleased]
 
-## 0.1.0 - 2017-07-18
+## 0.2.0 - 2017-12-17
 - Initial Release.
 
-[Unreleased]: https://github.com/tsachev/lein-bom/compare/0.1.0...HEAD
+[Unreleased]: https://github.com/tsachev/lein-bom/compare/0.2.0...HEAD

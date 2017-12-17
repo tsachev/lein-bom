@@ -9,7 +9,7 @@ A Leiningen plugin that provides support for importing Maven "Bill Of Materials"
 
 ## Install
 
-Put `[lein-bom "0.1.0-SNAPSHOT"]` into the `:plugins` vector of your `project.clj`.
+Put `[lein-bom "0.2.0-SNAPSHOT"]` into the `:plugins` vector of your `project.clj`.
 
 ## Usage
 
