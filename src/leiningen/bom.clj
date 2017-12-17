@@ -3,7 +3,7 @@
     [clojure.pprint :as pp]
     [leiningen.core.project :as project]
     [lein-bom.aether :as aether])
-  (:import (org.sonatype.aether.resolution ArtifactDescriptorResult)
+  (:import (org.eclipse.aether.resolution ArtifactDescriptorResult)
            (clojure.lang ITransientSet)))
 
 (defn- resolve-imported-dependencies [boms {:keys [repositories offline?]}]

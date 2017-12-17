@@ -2,12 +2,13 @@
   (:require [cemerick.pomegranate.aether :as aether :refer [maven-central]]
             [clojure.java.io :as io]
             [clojure.string :as str])
-  (:import (org.sonatype.aether.util.artifact ArtifactProperties)
-           (org.sonatype.aether.resolution ArtifactDescriptorRequest ArtifactDescriptorResult)
-           (org.sonatype.aether RepositorySystem RepositorySystemSession)
-           (org.sonatype.aether.graph Dependency Exclusion)
-           (org.sonatype.aether.util DefaultRepositorySystemSession)
-           (org.sonatype.aether.artifact Artifact)))
+  (:import (org.eclipse.aether.artifact ArtifactProperties)
+           (org.eclipse.aether.resolution ArtifactDescriptorRequest ArtifactDescriptorResult)
+           (org.eclipse.aether RepositorySystem RepositorySystemSession)
+           (org.eclipse.aether.graph Dependency Exclusion)
+           (org.eclipse.aether DefaultRepositorySystemSession)
+           (org.eclipse.aether.artifact Artifact)
+           (org.eclipse.aether.util.repository SimpleArtifactDescriptorPolicy)))
 
 
 (def ^Artifact artifact #'aether/artifact)
@@ -68,8 +69,7 @@
 (defn artifact-descriptors-repository-session [{:keys [repository-system local-repo offline? transfer-listener mirror-selector] :as args}]
   (let [session (aether/repository-session args)]
     (-> ^DefaultRepositorySystemSession session
-        (.setIgnoreMissingArtifactDescriptor false)
-        (.setIgnoreInvalidArtifactDescriptor false))))
+        (.setArtifactDescriptorPolicy (new SimpleArtifactDescriptorPolicy false false)))))
 
 (defn read-artifact-descriptors* [& {:keys [repositories coordinates files retrieve local-repo
                                             transfer-listener offline? proxy mirrors repository-session-fn]

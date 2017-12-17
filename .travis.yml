@@ -1,5 +1,5 @@
 language: clojure
-lein: 2.7.1
+lein: 2.8.1
 sudo: false
 
 script:
@@ -10,6 +10,7 @@ cache:
     - $HOME/.m2
 
 jdk:
+  - oraclejdk9
   - oraclejdk8
   - oraclejdk7
   - openjdk7

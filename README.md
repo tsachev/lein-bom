@@ -16,7 +16,7 @@ Put `[lein-bom "0.1.0-SNAPSHOT"]` into the `:plugins` vector of your `project.cl
 Specify bom dependencies using `:import` vector in `:bom` map of your `project.clj`.
 
 ```clojure
-:bom {:import [[com.fasterxml.jackson/jackson-bom "2.8.9"]]}
+:bom {:import [[com.fasterxml.jackson/jackson-bom "2.9.3"]]}
 ```
 
 To see actual managed dependencies, run:
