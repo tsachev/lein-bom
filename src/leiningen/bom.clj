@@ -6,7 +6,7 @@
   (:import (org.eclipse.aether.resolution ArtifactDescriptorResult)
            (clojure.lang ITransientSet)))
 
-(defn- resolve-imported-dependencies [boms {:keys [repositories offline?]}]
+(defn- resolve-imported-dependencies [boms {:keys [repositories local-repo offline?]}]
   (->> (aether/read-artifact-descriptors
          :coordinates (map (fn [[group-artifact version & {:keys [classifier extension scope]
                                                            :as   opts
@@ -24,6 +24,7 @@
                                 :exclusions nil             ;todo exclusions (https://issues.apache.org/jira/browse/MNG-5600)
                                 })) boms)
          :repositories repositories
+         :local-repo local-repo
          :offline? offline?)
 
        (mapcat #(-> (meta %)
