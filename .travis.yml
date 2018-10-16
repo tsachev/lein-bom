@@ -13,13 +13,10 @@ jdk:
   - oraclejdk10
   - oraclejdk8
   - oraclejdk7
+  - openjdk11
+  - openjdk10
   - openjdk8
   - openjdk7
-matix:
-  include:
-    - jdk: openjdk10
-      before_install:
-        - ln -s /etc/ssl/certs/java/cacerts "${JAVA_HOME}/lib/security/cacerts"
 
 after_success:
   - bash <(curl -s https://codecov.io/bash) -f target/coverage/codecov.json
