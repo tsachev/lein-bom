@@ -1,7 +1,7 @@
 (ns leiningen.bom
   (:require
     [clojure.pprint :as pp]
-    [leiningen.core.project :as project]
+    [leiningen.core.classpath :as classpath]
     [lein-bom.aether :as aether])
   (:import (org.eclipse.aether.resolution ArtifactDescriptorResult)
            (clojure.lang ITransientSet)))
@@ -23,7 +23,8 @@
                                 :optional   false
                                 :exclusions nil             ;todo exclusions (https://issues.apache.org/jira/browse/MNG-5600)
                                 })) boms)
-         :repositories repositories
+         :repositories (->> repositories
+                            (map classpath/add-repo-auth))
          :local-repo local-repo
          :offline? offline?)
 
